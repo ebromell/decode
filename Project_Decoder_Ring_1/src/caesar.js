@@ -7,28 +7,28 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift, encode = true) {
-    const codes = "";
-    const low = input.toLowerCase();
-    console.log(codes);
-    console.log(encode);
-    console.log(low);
-    console.log(shift);
-    for (let i = 0; i < input.length; i++){
-    if (!input || input < -25 || input > 25){
-      console.log(codes);
-      console.log(encode);
-      console.log(low);
-      
-    } 
-      console.log(codes);
-      console.log(encode);
-      console.log(input);
+    if (encode === false) shift = -shift;
+    let encMsg = "";
+    let evenLower = input.toLowerCase();
+
+    for (let i = 0; i < input.length; i++) {
+      let low = evenLower.charCodeAt(i);
+      if (low >= 97 && low <= 122) {
+        low += shift;
+        if (low < 97) {
+          low += 26;
+        }
+        if (low > 122) {
+          low -= 26;
+        }
+      }
+      encMsg += String.fromCharCode(low);
+      console.log(encMsg);
+    }
+    return encMsg;
   }
-    // your solution code here
-}
 
   return {
-    
     caesar,
   };
 })();
