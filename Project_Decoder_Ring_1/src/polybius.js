@@ -54,7 +54,6 @@ const polybiusModule = (function () {
           } else {
             row = parseInt(input.charAt(j));
             col = parseInt(input.charAt(j + 1));
-            console.log(`row = ${row}, column = ${col}`);
             // init imaginary 5*5 grid for math
             let res = col * 5 - 5;
             res = row + res;

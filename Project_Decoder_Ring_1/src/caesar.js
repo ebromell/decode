@@ -31,7 +31,6 @@ const caesarModule = (function () {
       //the coded characters in set range
       encMsg += String.fromCharCode(low);
       //updates output var to converted string
-      console.log(encMsg);
     }
     return encMsg;
   }
