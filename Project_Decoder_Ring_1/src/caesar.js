@@ -7,6 +7,7 @@ const caesarModule = (function () {
   // you can add any code you want within this function scope
 
   function caesar(input, shift, encode = true) {
+    if (shift == null || shift == 0 || shift > 25 || shift < -25) return false;
     // if the function is not encoding, reverse the direction of the shift.
     if (encode === false) shift = -shift;
     //create an empty string var, to be used later as the output.
